@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="/reg" method="post">
+		<fieldset>
+			<legend>用户注册</legend>
+			用户名：<input type="text" class="username" name="username" value=""><span class="unameMsg"></span><br><br>
+			<ul class="uMsg"></ul>
+			密码：<input type="password" name="password" value=""><br><br>
+			手机号码：<input type="text" class="phone" name="phone" value=""><button type="button" class="send">发送短信</button><br><br>
+			验证码：<input type="text" name="code" value=""><br><br>
+			<input type="submit" value="注册">
+		</fieldset>
+	</form>
+
+	<script src="/plugins/jquery/dist/jquery.min.js"></script>
+
+	<script>
+		$(function(){
+			$('.username').blur(function(){
+				var value = $.trim($(this).val());
+
+				$.post('/check',{username:value},function(data){
+					var content ='';
+					if(data.success == 1){
+						$('.unameMsg').text('该用户已经被注册，请选择');
+						data.more.forEach(function(value,key){
+							content+='<li>'+value+'</li>';
+						})
+						$('.uMsg').html(content);
+
+					} else {
+						$('.unameMsg').text('该用户可用');
+					}
+				})
+			});
+
+
+			$('.send').click(function(){
+				var value = $.trim($('.phone').val());
+
+				$.post('/msg',{phone:value},function(data){
+					if(data.success === 1){
+						alert('发送成功');
+
+						$('.send').prop('disabled',true);
+						var max = 10;
+						var timer = setInterval(function(){
+							max--;
+							if(max<=0){
+								clearInterval(timer);
+								$('.send').text('重新发送').prop('disabled',false);
+							} else {
+								$('.send').text(max+'s');
+							}
+						},1000)
+					}else{
+						alert('发送失败');
+					}
+				})
+			})
+		})
+	</script>
+</body>
+</html>

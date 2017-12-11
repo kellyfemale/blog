@@ -1,0 +1,255 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.container{
+	width: 100%;
+	position: relative;
+	right: 0;
+}
+.bgImg{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 670px;
+	overflow: hidden;
+}
+.bgImg .bgImage{
+	width: 100%;
+	height: 800px;
+}
+
+.bgImg .nav{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1270px;
+	height: 70px;
+	padding: 35px 40px;
+	margin: 0 0 30px 0;
+	/*background-color: pink;*/
+	z-index: 100;
+}
+.nav .logo{
+	display: inline-block;
+	float: left;
+}
+.nav .iconImg{
+	border-radius: 50%;
+	height: 38px;
+	width: 38px;
+}
+.nav .menu{
+	display: inline-block;
+	float: right;
+	padding: 0 15px;
+	height: 38px;
+	color: #fff;
+	border: 1px solid rgba(255,255,255,.6);
+	font-size: 12px;
+	line-height: 38px;
+	border-radius: 3px;
+}
+.nav .menu:hover{
+	background-color: #fff;
+	color: #333;
+}
+.nav .menu i{
+	display: inline-block;
+	vertical-align: middle;
+}
+.bgImg .header{
+	position: absolute;
+	top: 40%;
+	left: 25%;
+	max-width: 710px;
+	/*margin: 0 auto;*/
+	width: 80%;
+	text-align: center;
+	/*background-color: pink;*/
+	z-index: 100;
+}
+.bgImg .header h1{
+	margin: 10px 0 10px 0;
+	letter-spacing: -1px;
+	font-weight: 700;
+	color: #fff;
+	font-size: 50px;
+	text-indent: -3px;
+}
+.bgImg .header h2{
+	font-weight: 400;
+	font-size: 20px;
+	color: rgba(255,255,255,.8);
+	letter-spacing: 0.1px;
+}
+.bgImg .down{
+	position: absolute;
+	top: 85%;
+	left: 50%;
+	margin-left: -25px;
+	width: 50px;
+	height: 50px;
+	background-color: pink;
+	font-size: 36px;
+	font-weight: 700;
+	text-align: center;
+	line-height: 50px;
+}
+.post{
+	position: relative;
+}
+.post article{
+	margin: 40px auto;
+	width: 80%;
+	max-width: 710px;
+	border-bottom: 1px solid rgb(235,242,246);
+	color: #3A4145;
+	font-size: 18px;
+	letter-spacing: 0.1px;
+	line-height: 31.5px;
+}
+.post header h2{
+	color: #2E2E2E;
+	margin: 0 0 14.4px 0;
+	font-size: 36px;
+	letter-spacing: -1px;
+}
+.post h2 a{
+	color: #4A4A4A;
+}
+.post section p{
+	font-size: 16.2px;
+	letter-spacing: 0.1px;
+	line-height: 27.5333px;
+}
+.post footer{
+	margin-bottom: 40px;
+}
+.post footer .iconImg{
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+.post footer a{
+	color: #9EABB3;
+	font-size: 15px;
+	line-height: 22px;
+	letter-spacing: 0.1px;
+}
+.post footer span{
+	display: inline-block;
+	margin-left: 8px;
+	padding-left: 12px;
+	border-left: 1px solid #d5dbde;
+	font-size: 13px;
+	letter-spacing: 0.1px;
+	color: #9EABB3;
+}
+
+/*列表*/
+.menuList{
+	position: fixed;
+	right: -250px;
+	top: 0;
+	width: 250px;
+	height: 100%;
+	background-color: #000;
+	z-index: 999;
+}
+ul{
+	width: 190px;
+	margin: 50px auto;
+	color: #fff;
+	line-height: 30px;
+	/*border: 1px solid red;*/
+}
+ul a{
+	color: #fff;
+}
+.menuList .search{
+	width: 200px;
+	height: 30px;
+	line-height: 26px;
+	margin: 50px auto;
+	overflow: hidden;
+	border: 1px solid #fff;
+	border-radius: 3px;
+}
+.search input{
+	color: #555;
+	width: 160px;
+	height: 20px;
+	margin-left: 4px;
+	line-height: 20px;
+	background-color: #000;
+	border: none;
+	outline: none;
+}
+.menuList .btn{
+	width: 140px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	margin: 300px auto;
+	background-color: #fff;
+	border-radius: 5px;
+	text-align: center;
+}
+.menuList .menuLittle{
+	position: absolute;
+	top: 35px;
+	left: -29px;
+	width: 30px;
+	height: 40px;
+	background-color: #000;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	border-radius: 3px;
+	display: none;
+}
+/*分页*/
+.paginator{
+	position: relative;
+	width: 80%;
+	max-width: 710px;
+	/*height: 50px;*/
+	margin: 40px auto;
+	font-size: 13px;
+	color: #9EABB3;
+	text-align: center;
+}
+.paginator .content{
+	clear: both;
+}
+.paginator p{
+	display: inline-block;
+	padding: 2px 0;
+	min-width: 100px;
+}
+.paginator a.prev{
+	position: absolute;
+	left: 0;
+	display: inline-block;
+	padding: 5px 15px;
+	color: #9EABB3;
+	border: 1px solid #bfc8cd;
+	border-radius: 4px;
+}
+.paginator a.next{
+	position: absolute;
+	right: 0;
+	display: inline-block;
+	padding: 5px 15px;
+	color: #9EABB3;
+	border: 1px solid #bfc8cd;
+	border-radius: 4px;
+}

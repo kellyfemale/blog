@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" href="/assets/images/icon.png">
+	<title>朱智超博客</title>
+	<link rel="stylesheet" href="/assets/css/index.css">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_443639_11pyvlo2nutprpb9.css">
+</head>
+<body>
+	<div class="container">
+		<div class="bgImg">
+			<img class="bgImage" src="/assets/images/bgimage.jpg" alt="">
+			<div class="nav">
+				<a class="logo" href="/"><img class="iconImg" src="/assets/images/icon.png" alt=""></a>
+				<a class="menu" href="javascript:;">
+					<i class="iconfont icon-menu1"></i>
+					<span class="text">MENU</span>
+				</a>
+			</div>
+			<div class="header">
+				<h1>朱智超的博客</h1>
+				<h2>人生得意须尽欢，莫使金樽空对月</h2>
+			</div>
+			<!-- <div class="down"><i class="iconfont icon-icon"></i></div> -->
+		</div>
+		<div class="post">
+			<% results2.forEach(function(value,key){ %>
+
+				<article>
+					<header>
+						<h2>
+							<a href="/show/<%=value.id%>"><%=value.title%></a>
+						</h2>
+					</header>
+					<section>
+						<p>
+							<%=value.intro%>
+						</p>
+					</section>
+					<footer>
+						<img class="iconImg" src="/assets/images/icon.png" alt="">
+						<a href="">Author</a>
+						<span class="time"><%=moment.unix(value.addtime).format('YYYY-MM-DD HH:mm:ss')%></span>
+					</footer>
+				</article>
+			<% }) %>
+		
+		</div>
+	</div>
+	<div class="paginator">
+		<div class="content">
+			<a href="/?p=<%=page.prev%><%=param%>" class="prev"><- Newer Posts</a>
+			<p>Page <span><%=page.now%></span> of <span><%=page.pages%></span></p>
+			<a href="/?p=<%=page.next%><%=param%>" class="next">Older Posts -></a>
+		</div>
+	</div>
+	<div class="menuList">
+		<div class="menuLittle"><i class="iconfont icon-menu1"></i></div>
+		<ul>
+			<li><a href="javascript:;">MENU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>X</span></a></li>
+			<li><a href="/">首页</a></li>
+			<% results3.forEach(function(value,key){ %>
+				<li>
+					<a href="?tid=<%=value.id%>"><%=value.title%></a>
+				</li>
+			<% })%>
+		</ul>
+		<div class="search"><input type="text" placeholder="搜索"></div>
+		<div class="btn"><a href="/login">后台登录</a></div>
+	</div>
+	
+
+	<script src="/plugins/jquery/dist/jquery.min.js"></script>
+	<script src="/assets/js/index.js"></script>
+</body>
+</html>
